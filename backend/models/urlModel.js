@@ -26,7 +26,7 @@ const URLModel = {
 
     try {
       const [result] = await db.execute(
-        "SELECT * FROM urls WHERE id = ? LIMIT 1",
+        "SELECT * FROM urls WHERE deleted_at IS NULL AND id = ? LIMIT 1",
         [idUser]
       );
       return result;
@@ -40,7 +40,7 @@ const URLModel = {
 
     try {
       const [result] = await db.execute(
-        "SELECT * FROM urls WHERE id_user = ?",
+        "SELECT * FROM urls WHERE deleted_at IS NULL AND id_user = ?",
         [idUser]
       );
       return result;
@@ -54,7 +54,7 @@ const URLModel = {
 
     try {
       const [result] = await db.execute(
-        "UPDATE urls SET url = ? WHERE id = ? LIMIT 1",
+        "UPDATE urls SET url = ? WHERE deleted_at IS NULL AND id = ? LIMIT 1",
         [url, id]
       );
       return result;
@@ -68,7 +68,7 @@ const URLModel = {
 
     try {
       const query =
-        "UPDATE urls SET deleted_at = FROM_UNIXTIME(?) WHERE id = ? LIMIT 1";
+        "UPDATE urls SET deleted_at = FROM_UNIXTIME(?) WHERE deleted_at IS NULL AND id = ? LIMIT 1";
 
       const deletedAt = Math.floor(Date.now() / 1000);
 
