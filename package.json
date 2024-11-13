@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "A URL shortener resposible for receiving URLs and creating their short versions.",
   "main": "server.js",
+  "type": "module",
   "scripts": {
     "start": "node backend/server.js",
     "server": "nodemon backend/server.js",
@@ -24,7 +25,8 @@
     "express": "^4.21.1",
     "express-async-handler": "^1.2.0",
     "jsonwebtoken": "^9.0.2",
-    "mysql2": "^3.11.4"
+    "mysql2": "^3.11.4",
+    "nanoid": "^5.0.8"
   },
   "devDependencies": {
     "nodemon": "^3.1.7"
