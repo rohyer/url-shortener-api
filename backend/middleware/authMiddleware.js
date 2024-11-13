@@ -18,7 +18,7 @@ const protect = asyncHandler(async (req, res, next) => {
 
       next();
     } catch (error) {
-      throw new Error("Não autorizado");
+      throw new Error("Usuário não encontrado");
     }
   } else {
     req.user = false;
