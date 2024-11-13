@@ -54,8 +54,14 @@ const updateURL = asyncHandler(async (req, res) => {
   }
 
   const updatedURL = await URLModel.updateURL(req.body.url, req.params.id);
+
+  if (updatedURL.affectedRows === 0) {
+    res.status(400);
+    throw new Error("Erro ao atualizar URL!");
+  }
+
   res.status(200);
-  res.json({ message: "URL atualizada", updatedURL });
+  res.json({ message: "URL atualizada!", updatedURL });
 });
 
 const deleteURL = asyncHandler(async (req, res) => {
@@ -77,6 +83,12 @@ const deleteURL = asyncHandler(async (req, res) => {
   }
 
   const deletedURL = await URLModel.deleteURL(req.params.id);
+
+  if (deletedURL.affectedRows === 0) {
+    res.status(400);
+    throw new Error("Erro ao deletar URL");
+  }
+
   res.status(200);
   res.json({ message: "URL deletada", deletedURL });
 });
