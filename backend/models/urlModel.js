@@ -67,10 +67,12 @@ const URLModel = {
     const db = getConnection();
 
     try {
-      const [result] = await db.execute(
-        "DELETE FROM urls WHERE id = ? LIMIT 1",
-        [id]
-      );
+      const query =
+        "UPDATE urls SET deleted_at = FROM_UNIXTIME(?) WHERE id = ? LIMIT 1";
+
+      const deletedAt = Math.floor(Date.now() / 1000);
+
+      const [result] = await db.execute(query, [deletedAt, id]);
       return result;
     } catch (error) {
       throw error;
