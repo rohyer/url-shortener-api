@@ -2,6 +2,11 @@ import asyncHandler from "express-async-handler";
 import { nanoid } from "nanoid";
 import URLModel from "../models/urlModel.js";
 
+/**
+ * @description Register URL
+ * @route       POST /api/urls/register
+ * @access      Public
+ */
 const registerURL = asyncHandler(async (req, res) => {
   const { url } = req.body;
 
@@ -24,6 +29,11 @@ const registerURL = asyncHandler(async (req, res) => {
   }
 });
 
+/**
+ * @description List URLs
+ * @route       GET /api/urls/list
+ * @access      Private
+ */
 const listURLs = asyncHandler(async (req, res) => {
   if (!req.user) {
     res.status(401);
@@ -35,6 +45,11 @@ const listURLs = asyncHandler(async (req, res) => {
   res.json({ result });
 });
 
+/**
+ * @description Update URLs
+ * @route       PUT /api/urls/update/:id
+ * @access      Private
+ */
 const updateURL = asyncHandler(async (req, res) => {
   if (!req.user) {
     res.status(401);
@@ -64,6 +79,11 @@ const updateURL = asyncHandler(async (req, res) => {
   res.json({ message: "URL atualizada!", updatedURL });
 });
 
+/**
+ * @description Soft Delete URLs
+ * @route       DELETE /api/urls/delete/:id
+ * @access      Private
+ */
 const deleteURL = asyncHandler(async (req, res) => {
   if (!req.user) {
     res.status(401);
