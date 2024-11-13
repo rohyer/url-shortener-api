@@ -40,7 +40,7 @@ const URLModel = {
 
     try {
       const [result] = await db.execute(
-        "SELECT * FROM urls WHERE deleted_at IS NULL AND id_user = ?",
+        "SELECT url, short_code, click_count FROM urls WHERE deleted_at IS NULL AND id_user = ?",
         [idUser]
       );
       return result;
