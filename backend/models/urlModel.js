@@ -1,13 +1,13 @@
 import getConnection from "../config/db.js";
 
 const URLModel = {
-  async createURL(url, shortCode) {
+  async createURL(url, shortCode, idUser) {
     const db = getConnection();
 
     try {
       const [result] = await db.execute(
-        "INSERT INTO urls (url, short_code) VALUES (?, ?)",
-        [url, shortCode]
+        "INSERT INTO urls (url, short_code, id_user) VALUES (?, ?, ?)",
+        [url, shortCode, idUser]
       );
 
       const [rows] = await db.execute(
