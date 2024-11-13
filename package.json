@@ -4,6 +4,8 @@
   "description": "A URL shortener resposible for receiving URLs and creating their short versions.",
   "main": "server.js",
   "scripts": {
+    "start": "node backend/server.js",
+    "server": "nodemon backend/server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
