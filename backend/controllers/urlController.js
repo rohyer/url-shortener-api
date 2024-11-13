@@ -12,7 +12,9 @@ const registerURL = asyncHandler(async (req, res) => {
 
   const shortCode = nanoid(6);
 
-  const result = await URLModel.createURL(url, shortCode);
+  const idUser = req.user.id || null;
+
+  const result = await URLModel.createURL(url, shortCode, idUser);
 
   if (result.length > 0) {
     res.status(201).json(`http://localhost/${result[0].short_code}`);
