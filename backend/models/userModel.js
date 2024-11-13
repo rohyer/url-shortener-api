@@ -1,4 +1,4 @@
-const getConnection = require("../config/db");
+import getConnection from "../config/db.js";
 
 const UserModel = {
   async setUser(name, email, password) {
@@ -44,4 +44,4 @@ const UserModel = {
   }
 };
 
-module.exports = UserModel;
+export default UserModel;

@@ -1,4 +1,4 @@
-const mysql = require("mysql2");
+import mysql from "mysql2";
 
 let pool;
 
@@ -27,4 +27,4 @@ const getConnection = () => {
 
 connectionDB();
 
-module.exports = getConnection;
+export default getConnection;
