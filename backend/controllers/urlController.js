@@ -22,7 +22,7 @@ const registerURL = asyncHandler(async (req, res) => {
   const result = await URLModel.createURL(url, shortCode, idUser);
 
   if (result.length > 0) {
-    res.status(201).json(`http://localhost/${result[0].short_code}`);
+    res.status(201).json(process.env.DOMAIN + result[0].short_code);
   } else {
     res.status(400);
     throw new Error("Erro ao criar url!");
@@ -41,8 +41,11 @@ const listURLs = asyncHandler(async (req, res) => {
   }
 
   const result = await URLModel.getURLsByUserId(req.user.id);
+
+  const response = handleListResponse(result);
+
   res.status(200);
-  res.json({ result });
+  res.json(response);
 });
 
 /**
@@ -112,5 +115,15 @@ const deleteURL = asyncHandler(async (req, res) => {
   res.status(200);
   res.json({ message: "URL deletada", deletedURL });
 });
+
+const handleListResponse = (data) => {
+  data.forEach((element) => {
+    element.url_shortener = process.env.DOMAIN + element.short_code;
+    delete element.short_code;
+    delete element.url;
+  });
+
+  return data;
+};
 
 export { registerURL, listURLs, updateURL, deleteURL };
