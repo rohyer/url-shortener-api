@@ -9,14 +9,14 @@ import {
 } from "../controllers/urlController.js";
 import protect from "../middleware/authMiddleware.js";
 
-router.post("/register", protect, registerURL);
+router.post("/", protect, registerURL);
 
-router.get("/list", protect, listURLs);
+router.get("/", protect, listURLs);
 
-router.put("/update/:id", protect, updateURL);
+router.put("/:id", protect, updateURL);
 
-router.delete("/delete/:id", protect, deleteURL);
+router.delete("/:id", protect, deleteURL);
 
-router.get("/original-url/:shortCode", redirectToOriginalURL);
+router.get("/:shortCode", redirectToOriginalURL);
 
 export default router;
