@@ -77,6 +77,34 @@ const URLModel = {
     } catch (error) {
       throw error;
     }
+  },
+
+  async getURLByShortCode(shortcode) {
+    const db = getConnection();
+
+    try {
+      const [result] = await db.execute(
+        "SELECT url FROM urls WHERE short_code = ? LIMIT 1",
+        [shortcode]
+      );
+      return result;
+    } catch (error) {
+      throw error;
+    }
+  },
+
+  async addClickCount(shortCode) {
+    const db = getConnection();
+
+    try {
+      const [result] = await db.execute(
+        "UPDATE urls SET click_count = click_count + 1 WHERE short_code = ? LIMIT 1",
+        [shortCode]
+      );
+      return result;
+    } catch (error) {
+      throw error;
+    }
   }
 };
 
