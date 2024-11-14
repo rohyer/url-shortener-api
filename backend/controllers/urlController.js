@@ -116,6 +116,20 @@ const deleteURL = asyncHandler(async (req, res) => {
   res.json({ message: "URL deletada", deletedURL });
 });
 
+const redirectToOriginalURL = asyncHandler(async (req, res) => {
+  const { shortCode } = req.params;
+
+  const result = await URLModel.getURLByShortCode(shortCode);
+
+  if (result.length > 0) {
+    await URLModel.addClickCount(shortCode);
+    res.redirect(result[0].url);
+  } else {
+    res.status(400);
+    res.json({ error: "URL não encontrada" });
+  }
+});
+
 const handleListResponse = (data) => {
   data.forEach((element) => {
     element.url_shortener = process.env.DOMAIN + element.short_code;
@@ -126,4 +140,4 @@ const handleListResponse = (data) => {
   return data;
 };
 
-export { registerURL, listURLs, updateURL, deleteURL };
+export { registerURL, listURLs, updateURL, deleteURL, redirectToOriginalURL };
