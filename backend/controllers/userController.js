@@ -49,13 +49,11 @@ const registerUser = asyncHandler(async (req, res) => {
 const loginUser = asyncHandler(async (req, res) => {
   const { email, password } = req.body;
 
-  // Verifica os dados foram preenchidos
   if (!email || !password) {
     res.status(400);
     throw new Error("Por favor, preencha os campos.");
   }
 
-  // Verifica se o usuário existe
   const userExists = await UserModel.getUserByEmail(email);
 
   if (userExists.length === 0) {
@@ -63,11 +61,11 @@ const loginUser = asyncHandler(async (req, res) => {
     throw new Error("Usuário não encontrado");
   }
 
-  // Verifica se o usuário existe e se a senha é correta
   if (
     userExists.length > 0 &&
     (await bcrypt.compare(password, userExists[0].password))
   ) {
+    res.status(200);
     res.json({ ...userExists[0], token: generateToken(userExists[0].id) });
   } else {
     res.status(400);
