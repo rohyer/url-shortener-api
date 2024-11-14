@@ -63,7 +63,7 @@ const URLModel = {
     }
   },
 
-  async deleteURL(id) {
+  async softDeleteURL(id) {
     const db = getConnection();
 
     try {

@@ -105,7 +105,7 @@ const deleteURL = asyncHandler(async (req, res) => {
     throw new Error("Usuário não autorizado");
   }
 
-  const deletedURL = await URLModel.deleteURL(req.params.id);
+  const deletedURL = await URLModel.softDeleteURL(req.params.id);
 
   if (deletedURL.affectedRows === 0) {
     res.status(400);
