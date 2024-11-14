@@ -126,7 +126,7 @@ const redirectToOriginalURL = asyncHandler(async (req, res) => {
     res.redirect(result[0].url);
   } else {
     res.status(400);
-    res.json({ error: "URL não encontrada" });
+    throw new Error("URL não encontrada");
   }
 });
 
