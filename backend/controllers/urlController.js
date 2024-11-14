@@ -4,7 +4,7 @@ import URLModel from "../models/urlModel.js";
 
 /**
  * @description Register URL
- * @route       POST /api/urls/register
+ * @route       POST /api/urls
  * @access      Public
  */
 const registerURL = asyncHandler(async (req, res) => {
@@ -31,7 +31,7 @@ const registerURL = asyncHandler(async (req, res) => {
 
 /**
  * @description List URLs
- * @route       GET /api/urls/list
+ * @route       GET /api/urls
  * @access      Private
  */
 const listURLs = asyncHandler(async (req, res) => {
@@ -49,8 +49,8 @@ const listURLs = asyncHandler(async (req, res) => {
 });
 
 /**
- * @description Update URLs
- * @route       PUT /api/urls/update/:id
+ * @description Update URL
+ * @route       PUT /api/urls/:id
  * @access      Private
  */
 const updateURL = asyncHandler(async (req, res) => {
@@ -83,8 +83,8 @@ const updateURL = asyncHandler(async (req, res) => {
 });
 
 /**
- * @description Soft Delete URLs
- * @route       DELETE /api/urls/delete/:id
+ * @description Soft Delete URL
+ * @route       DELETE /api/urls/:id
  * @access      Private
  */
 const deleteURL = asyncHandler(async (req, res) => {
