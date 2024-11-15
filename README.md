@@ -6,8 +6,8 @@ API encurtadora links criado com Node.js (v22.11.0), que permite transformar lin
 
 A API possui a principal funcionalidade de receber URLs e transformá-las em URLs curtas com um código de no máximo 6 caracteres. Também é possível atualizar, deletar, listar as URLs que pertencem a um respectivo usuário caso ele tenha se autenticado e redirecionar o usuário para a URL original caso ele envie o short code no respectivo endpoint.
 Além disso a API também possui endpoints para cadastro e login de usuário contendo uma autenticação completa e geração de Bearer Token.
-Abaixo a lista dos endpoints da API:
 
+### Endpoints da API
 - POST: /api/users/register
 - POST: /api/users/login
 
