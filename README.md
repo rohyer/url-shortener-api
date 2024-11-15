@@ -31,7 +31,7 @@ Abaixo a lista dos endpoints da API:
 
 3. Configure o Banco de dados MySQL: importe o arquivo .sql que está na raíz do projeto para o banco de dados MySQL
 
-4. Adicione as seguintes variáveis de ambiente em um arquivo .env na raíz do projeto antes de iniciá-lo.
+4. O projeto já possui um arquivo .env.example para facilitar a instalação. Ele contém as variáveis de ambiente abaixo. Antes de inicilizar o projeto renomeio para um arquivo .env
 
 | Variáveis  | Descrição                                     | Exemplo                   |
 |------------|-----------------------------------------------|---------------------------|
@@ -39,3 +39,6 @@ Abaixo a lista dos endpoints da API:
 | PORT       | Porta em que o projeto irá rodar              | 5000                      |
 | JWT_SECRET | Código utilizado pelo módulo jsonwebtoken     | codigoqualquer            |
 | DOMAIN     | Domínio utilizado para compor a URL encurtada | http://localhost/         |
+ 
+
+ **Observação:** Mantenha o NODE_ENV como development ou production.
