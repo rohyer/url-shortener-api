@@ -29,7 +29,7 @@ Além disso a API também possui endpoints para cadastro e login de usuário con
 
 2. Instale as dependências: npm install
 
-3. Configure o Banco de dados MySQL: importe o arquivo .sql que está na raíz do projeto para o banco de dados MySQL
+3. Configure o Banco de dados MySQL: importe o arquivo Dump20241115.sql que está na raíz do projeto para o banco de dados MySQL
 
 4. O projeto já possui um arquivo .env.example para facilitar a instalação. Ele contém as variáveis de ambiente abaixo. Antes de inicilizar o projeto renomeio para um arquivo .env
 
