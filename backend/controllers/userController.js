@@ -65,6 +65,9 @@ const loginUser = asyncHandler(async (req, res) => {
     userExists.length > 0 &&
     (await bcrypt.compare(password, userExists[0].password))
   ) {
+    userExists[0].created_at_handled = new Date(userExists[0].created_at).toLocaleString();
+    userExists[0].updated_at_handled = new Date(userExists[0].updated_at).toLocaleString();
+
     res.status(200);
     res.json({ ...userExists[0], token: generateToken(userExists[0].id) });
   } else {
