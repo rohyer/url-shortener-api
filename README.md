@@ -26,7 +26,7 @@ Abaixo a lista dos endpoints da API:
 ## Instalação
 
 1. Clone o repositório
-   git clone -b develop https://github.com/rohyer/url-shortener-api.git
+  - git clone -b develop https://github.com/rohyer/url-shortener-api.git
 
 2. Instale as dependências
    npm install
