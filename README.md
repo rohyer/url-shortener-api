@@ -33,15 +33,23 @@ Além disso a API também possui endpoints para cadastro e login de usuário con
 
 4. O projeto já possui um arquivo .env.example para facilitar a instalação. Ele contém as variáveis de ambiente abaixo. Antes de inicilizar o projeto renomeio para um arquivo .env
 
-| Variáveis  | Descrição                                     | Exemplo                   |
-|------------|-----------------------------------------------|---------------------------|
-| NODE_ENV   | Ambiente de desenvolvimento atual             | development ou production |
-| PORT       | Porta em que o projeto irá rodar              | 5000                      |
-| JWT_SECRET | Código utilizado pelo módulo jsonwebtoken     | codigoqualquer            |
-| DOMAIN     | Domínio utilizado para compor a URL encurtada | http://localhost/         |
+| Variáveis   | Descrição                                     | Exemplo                   |
+|-------------|-----------------------------------------------|---------------------------|
+| NODE_ENV    | Ambiente de desenvolvimento atual             | development ou production |
+| DB_HOST     | Endereço do servidor do Banco de Dados        | localhost                 |
+| DB_USER     | Usuário do Banco de Dados                     | root                      |
+| DB_PASSWORD | Senha do Banco de Dados                       |                           |
+| DB_NAME     | Nome do Banco de Dados                        | url_shortener             |
+| PORT        | Porta em que o projeto irá rodar              | 5000                      |
+| JWT_SECRET  | Código utilizado pelo módulo jsonwebtoken     | codigoqualquer            |
+| DOMAIN      | Domínio utilizado para compor a URL encurtada | http://localhost/         |
  
 
  **Observação:** Mantenha o NODE_ENV como development ou production.
+
+5. Rode o projeto com algum dos seguintes comandos:
+   1. npm run server
+   2. npm start
 
 ## Importante
 
