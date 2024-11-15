@@ -51,6 +51,10 @@ Além disso a API também possui endpoints para cadastro e login de usuário con
    1. npm run server
    2. npm start
 
+## Documentação
+
+A documentação foi feita utilizando o Swagger e pode ser encontrada em **/api-docs**.
+
 ## Importante
 
 Durante a leitura do teste vi que foi pedido para um endpoint receber a URL encurtada e redirecionar o usuário para a URL original. Para respeitar um padrão mais correto de desenvolvimento de uma API REST, ao invés de receber uma URL encurtada como parâmetro (http://localhost/abcdef) adicionei como parâmetro o recebimento do short code (abcdef) para então redirecionar o usuário a URL original.
