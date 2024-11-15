@@ -25,14 +25,11 @@ Abaixo a lista dos endpoints da API:
 
 ## Instalação
 
-1. Clone o repositório:
-git clone -b develop https://github.com/rohyer/url-shortener-api.git
+1. Clone o repositório: git clone -b develop https://github.com/rohyer/url-shortener-api.git
 
-2. Instale as dependências:
-   npm install
+2. Instale as dependências: npm install
 
-3. Configure o Banco de dados MySQL:
-   Importe o arquivo .sql que está na raíz do projeto para o banco de dados MySQL
+3. Configure o Banco de dados MySQL: importe o arquivo .sql que está na raíz do projeto para o banco de dados MySQL
 
 4. Adicione as seguintes variáveis de ambiente em um arquivo .env na raíz do projeto antes de iniciá-lo.
 
