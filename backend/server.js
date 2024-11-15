@@ -4,8 +4,12 @@ import { errorHandler } from "./middleware/errorMiddleware.js";
 import getConnection from "./config/db.js";
 import userRoutes from "./routes/userRoutes.js";
 import urlRoutes from "./routes/urlRoutes.js";
+import swaggerUi from 'swagger-ui-express';
+import swaggerDocs from './docs/swagger.js';
 const app = express();
 const port = process.env.PORT || 5000;
+
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocs));
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
