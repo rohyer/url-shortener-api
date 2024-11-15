@@ -12,7 +12,7 @@ const registerURL = asyncHandler(async (req, res) => {
 
   if (!url) {
     res.status(400);
-    throw new Error("Por favor, preencha o campo URL");
+    throw new Error("Por favor, preencha o campo url");
   }
 
   const shortCode = nanoid(6);
@@ -22,7 +22,7 @@ const registerURL = asyncHandler(async (req, res) => {
   const result = await URLModel.createURL(url, shortCode, idUser);
 
   if (result.length > 0) {
-    res.status(201).json(process.env.DOMAIN + result[0].short_code);
+    res.status(201).json({ urlShortened: process.env.DOMAIN + result[0].short_code});
   } else {
     res.status(400);
     throw new Error("Erro ao criar url!");
@@ -126,7 +126,7 @@ const redirectToOriginalURL = asyncHandler(async (req, res) => {
     res.redirect(result[0].url);
   } else {
     res.status(400);
-    throw new Error("URL não encontrada");
+    throw new Error("Short code não encontrado!");
   }
 });
 
