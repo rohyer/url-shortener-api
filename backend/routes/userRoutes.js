@@ -123,6 +123,14 @@ router.post("/register", registerUser);
  *                   type: string
  *                   description: Data e hora da última atualização dos dados do usuário
  *                   example: "2024-11-15T12:43:14.000Z"
+ *                 created_at_handled: 
+ *                   type: string
+ *                   description: Data e hora tratada do cadastro do usuário
+ *                   example: "2024-11-15T12:43:14.000Z"
+ *                 updated_at_handled: 
+ *                   type: string
+ *                   description: Data e hora tratada da última atualização dos dados do usuário
+ *                   example: "2024-11-15T12:43:14.000Z"
  *                 token: 
  *                   type: string
  *                   description: Bearer Token
