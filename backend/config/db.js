@@ -11,16 +11,16 @@ const connectionDB = () => {
       database: process.env.DB_NAME
     });
 
-    console.log("MySQL conectado!");
+    console.log("MySQL connected!");
   } catch (error) {
-    console.log(`Erro ao conectar com o banco de dados: ${error}`);
+    console.log(`Error connecting to database: ${error}`);
     process.exit(1);
   }
 };
 
 const getConnection = () => {
   if (!pool) {
-    throw new Error("Por favor, inicie o Banco de dado primeiro!");
+    throw new Error("Please, start the database first!");
   }
   return pool.promise();
 };
