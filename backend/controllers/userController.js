@@ -19,7 +19,7 @@ const registerUser = asyncHandler(async (req, res) => {
   const userExists = await UserModel.getUserByEmail(email);
 
   if (userExists.length > 0) {
-    res.status(500);
+    res.status(400);
     throw new Error("E-mail já cadastrado");
   }
 
