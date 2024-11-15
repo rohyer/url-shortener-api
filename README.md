@@ -25,7 +25,7 @@ Além disso a API também possui endpoints para cadastro e login de usuário con
 
 ## Instalação
 
-1. Clone o repositório: git clone -b develop https://github.com/rohyer/url-shortener-api.git
+1. Clone o repositório: git clone https://github.com/rohyer/url-shortener-api.git
 
 2. Instale as dependências: npm install
 
