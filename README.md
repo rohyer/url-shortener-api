@@ -33,9 +33,9 @@ Abaixo a lista dos endpoints da API:
 
 4. Adicione as seguintes variáveis de ambiente em um arquivo .env na raíz do projeto antes de iniciá-lo.
 
-Variáveis  | Descrição                                     | Exemplo
-
-NODE_ENV   | Ambiente de desenvolvimento atual             | development ou production
-PORT       | Porta em que o projeto irá rodar              | 5000
-JWT_SECRET | Código utilizado pelo módulo jsonwebtoken     | codigoqualquer
-DOMAIN     | Domínio utilizado para compor a URL encurtada | http://localhost/
+| Variáveis  | Descrição                                     | Exemplo                   |
+|------------|-----------------------------------------------|---------------------------|
+| NODE_ENV   | Ambiente de desenvolvimento atual             | development ou production |
+| PORT       | Porta em que o projeto irá rodar              | 5000                      |
+| JWT_SECRET | Código utilizado pelo módulo jsonwebtoken     | codigoqualquer            |
+| DOMAIN     | Domínio utilizado para compor a URL encurtada | http://localhost/         |
