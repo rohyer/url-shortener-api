@@ -1,0 +1,36 @@
+{
+  "name": "url-shortener-api",
+  "version": "1.0.0",
+  "description": "A URL shortener resposible for receiving URLs and creating their short versions.",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node backend/server.js",
+    "server": "nodemon backend/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rohyer/url-shortener-api.git"
+  },
+  "author": "Guilherme R.",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rohyer/url-shortener-api/issues"
+  },
+  "homepage": "https://github.com/rohyer/url-shortener-api#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.1",
+    "express-async-handler": "^1.2.0",
+    "jsonwebtoken": "^9.0.2",
+    "mysql2": "^3.11.4",
+    "nanoid": "^5.0.8",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^5.0.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.7"
+  }
+}
