@@ -1,10 +1,10 @@
 # Encurtador de Links
 
-API encurtadora links criado com Node.js (v22.11.0), que permite transformar links longos em curtos.
+API encurtadora de links criado com Node.js (v22.11.0), que permite transformar links longos em curtos.
 
 ## Sobre o Projeto
 
-A API possui a principal funcionalidade de receber URLs e transformá-las em URLs curtas com um código de no máximo 6 caracteres. Também é possível atualizar, deletar, listar as URLs que pertencem a um respectivo usuário caso ele tenha se autenticado e redirecionar o usuário para a URL original caso ele envie o short code no respectivo endpoint.
+A API possui a principal funcionalidade de receber URLs e transformá-las em URLs curtas com um código de no máximo 6 caracteres. Também é possível atualizar, deletar, listar as URLs que pertencem a um respectivo usuário caso ele tenha sido autenticado e redirecionar o usuário para a URL original caso ele envie o short code no respectivo endpoint.
 Além disso a API também possui endpoints para cadastro e login de usuário contendo uma autenticação completa e geração de Bearer Token.
 
 ### Endpoints da API
@@ -42,3 +42,7 @@ Além disso a API também possui endpoints para cadastro e login de usuário con
  
 
  **Observação:** Mantenha o NODE_ENV como development ou production.
+
+## Importante
+
+Durante a leitura do teste vi que foi pedido para um endpoint receber a URL encurtada e redirecionar o usuário para a URL original. Para respeitar um padrão mais correto de desenvolvimento de uma API REST, ao invés de receber uma URL encurtada como parâmetro (http://localhost/abcdef) adicionei como parâmetro o recebimento do short code (abcdef) para então redirecionar o usuário a URL original.
